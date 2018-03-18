@@ -22,6 +22,10 @@
 			    width: 100%;
 			    height: 50px;
 			}    
+			#map {
+		        height: 258px;
+		        width: 100%;
+		    }
 		</style>
 	</head>
 	<body>
@@ -144,17 +148,32 @@
 							<div class="flex flex-2">
 								<div class="col col2">
 									<h3>Contact us</h3>
+									<h5>Pratik Sahu (Director)</h5>
 									<p>Need Help ?
 										We would love to have a cup of tea with you to discuss your product and Services needs. <br/>
-										(+91-9074693136,8435918960) <br/>
-										contact@flexusoverseas.com
+										(+91 731-4991370, +91-9074693136) <br/>
+										pratik.sahu@flexusoverseas.com
 									</p>
 									<!-- <a href="#products" class="button scrolly">Learn More</a> -->
 								</div>
 								<div class="col col1 first">
-									<div class="image round fit" style="height: 100%">
-										<a href="#" class="link"><img src="images/contact.jpg" alt="" style="height: 100%"/></a>
-									</div>
+									<div id="map" class = "round fit"></div>
+								    <script>
+								      function initMap() {
+								        var uluru = {lat: 22.701823, lng: 75.833561};
+								        var map = new google.maps.Map(document.getElementById('map'), {
+								          zoom: 15,
+								          center: uluru
+								        });
+								        var marker = new google.maps.Marker({
+								          position: uluru,
+								          map: map
+								        });
+								      }
+								    </script>
+								    <script async defer
+								    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDenMNMfG4GPyQGI4qFPuvVQQTOkwpihAM&callback=initMap">
+								    </script>
 								</div>
 							</div>
 						</div>
@@ -192,7 +211,6 @@
 			<script type="text/javascript">
 				console.log('count');
 				console.log(document.cookie);
-			</script>>
-
-	</body>
+			</script>
+		</body>
 </html>
