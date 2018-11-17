@@ -303,6 +303,21 @@
       <script type="text/javascript">
         console.log('count');
         console.log(document.cookie);
+        var images = ["banner1.jpg", "banner2.jpg"];
+        $(function () {
+            var i = 0;
+            $("#banner").css("background-color", 'black');
+            $("#banner").css("background-image", "url(images/" + images[i] + ")");
+            setInterval(function () {
+                i++;
+                if (i == images.length) {
+                    i = 0;
+                }  
+                $('#banner').animate({ opacity: 10.7 }, 100, function(){
+                  $("#banner").css("background-image", "url(images/" + images[i] + ")")
+                })
+            }, 5000);
+        });
       </script>
     </body>
 </html>
